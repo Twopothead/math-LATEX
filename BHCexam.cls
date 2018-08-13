@@ -85,20 +85,20 @@
 \if@sixteenkpaper
 \RequirePackage[papersize={184mm,260mm},hmargin={3cm,2cm},
 vmargin={2cm,2cm},marginparsep=0.5cm,hoffset=0cm,voffset=0cm,
-footnotesep=0.5cm,headsep=0.5cm,twoside]{geometry}
+footnotesep=1cm,headsep=0.5cm,twoside]{geometry}
 \else
 \RequirePackage[paper=a4paper,hmargin={3cm,2cm},vmargin={2cm,2cm},
-marginparsep=0.5cm,hoffset=0cm,voffset=0cm,footnotesep=0.5cm,
+marginparsep=0.5cm,hoffset=0cm,voffset=0cm,footnotesep=1cm,
 headsep=0.5cm,twoside]{geometry}
 \fi
 \else
 \if@sixteenkpaper
 \RequirePackage[papersize={184mm,260mm},hmargin={2cm,2cm},
 vmargin={2cm,2cm},marginparsep=0.5cm,hoffset=0cm,voffset=0cm,
-footnotesep=0.5cm,headsep=0.5cm]{geometry}
+footnotesep=1cm,headsep=0.5cm]{geometry}
 \else
 \RequirePackage[papersize={210mm,297mm},hmargin={2cm,2cm},vmargin={2cm,2cm},
-marginparsep=0.5cm,hoffset=0cm,voffset=0cm,footnotesep=0.5cm,
+marginparsep=0.5cm,hoffset=0cm,voffset=0cm,footnotesep=1cm,
 headsep=0.5cm]{geometry}
 \fi
 \fi
@@ -196,7 +196,7 @@ headsep=0.5cm]{geometry}
 \newcommand{\notice}{
   \heiti 注意事项： \songti
   \begin{enumerate}
-  \item 答卷前, 考生务必将姓名、高考准考证号、校验码等填写清楚.
+  \item 答卷前, 考生务必将姓名、班级等填写清楚，解题时要认真审题，规范作答.
   \item 本试卷共~\numquestions{}~道试题, 满分~\@zongfen~分,考试时间~\@shijian~分钟.
   \end{enumerate}
 }
