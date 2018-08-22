@@ -1,0 +1,189 @@
+\documentclass{BHCexam}
+\biaoti{~$2016 - 2017$~学年度期中考试}
+\fubiaoti{高二数学试卷}
+\usepackage{palatino}
+\usepackage{siunitx}%输入度数符号需要的单位宏包
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows}
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width = 1cm, minimum height=0.5cm,text centered, draw = black]
+\tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=0.5cm, minimum height=0.5cm, text centered, draw=black]
+\tikzstyle{process} = [rectangle, minimum width=2cm, minimum height=0.5cm, text centered, draw=black]
+\tikzstyle{decision} = [diamond, aspect = 2, text centered, draw=black]
+% 箭头形式
+\tikzstyle{arrow} = [->,>=latex]
+\zihao{-4}
+
+\begin{document}
+\maketitle
+\mininotice
+
+\begin{questions}
+
+%选择题
+\xuanze
+\qs 程序框图符号“~%
+\begin{tikzpicture}
+\draw (0,0) rectangle (0.7,0.4);
+\end{tikzpicture}
+”可用于\tk.\\%
+\onech{$\text{输出}a=10$}{$\text{赋值}a=10$}{$\text{判断}a=10$}{$\text{输入}a=10$}
+\qs 阅读下面的程序框图，该程序输出的结果是\tk.\\
+\onech{$12$}{$19$}{$28$}{$37$}
+\begin{flushright}
+\begin{tikzpicture}[node distance=2pt,scale=0.5]
+%定义流程图具体形状
+\node[startstop](start){开始};
+\node[process, below of = start, yshift = -1cm](in1){$a=1,S=1$};
+%\node[process, below of = in1, yshift = -1cm](pro1){$S=\frac{1}{1-S}$};
+\node[decision, below of = in1, yshift = -1cm](dec1){ $a>3?$};
+\node[process, below of = dec1, yshift = -1cm](pro2){$S=S+9$};
+\node[process, below of = pro2, yshift = -1cm](pro3){$a=a+1$};
+\node[io, below of = pro3, yshift = -1cm](out1){输出~$S$~};
+\node[startstop, below of = out1, yshift = -1cm](stop){结束};
+\coordinate (point1) at (0cm, -5cm);
+\coordinate (point2) at (1cm,-2cm);
+%连接具体形状
+\draw [arrow] (start) -- (in1);
+\draw [arrow] (in1) -- (dec1);
+\draw [arrow] (dec1) -- node[right]{\small 否}(pro2);
+\draw [arrow] (pro2)-- (pro3);
+%\draw [arrow] (point2) -- (point1);
+%\draw [arrow] (dec1) -- node [left] {是} (out1);
+%\draw [arrow] (dec1) -- node [right] {是} (out1);
+\draw [arrow] (out1) -- (stop);
+\draw [arrow] (2.2,-4.3) --(2.5,-4.3)--(2.5,-9.5)--(0,-9.5)--(0,-10.1);
+\draw [<-] (0,-3)--(-2.4,-3)--(-2.4,-8.5)--(-2,-8.5);
+\node [right] at (2.5,-7.2) {\small 是};
+\end{tikzpicture}
+\end{flushright}
+\vspace{-8cm}
+\qs 在下列各数中，最大的数是\tk.\\
+\twoch{$85_{(9)}$}{$210_{(6)}$}{$1000_{(4)}$}{$11111_{(2)}$}
+\qs 不在$ 3x+2y<6 $表示的平面区域内的一个点是\tk.\\
+\twoch{$(0,0)$}{$(1,1)$}{$(0,2)$}{$(2,0)$}
+\qs 若 $\Bigg\{\begin{aligned}
+&x\leq 2 \\
+&y\leq 2,x+y\geq 2
+\end{aligned}$，则目标函数$z=x+2y$的取值范围是\tk.\\
+\twoch{$\left[2,6\right]$}{$\left[2,5\right]$}{$\left[3,6\right]$}{$\left[3,5\right]$}
+\qs 方程$ x^2+y^2+2ax-by+c=0 $表示圆心为$ C(2,2) $，半径为$ 2 $的圆，则$ a,b,c $的值依次为\tk.\\
+\onech{$ 2,4,4 $}{$ -2,4,4 $}{$ 2,-4,4 $}{$ 2,-4,-4 $}
+\qs 直线$ 3x-4y-4=0 $被圆$ (x-3)^2+y^2=9$截得的弦长为\tk.\\
+\onech{$ 2\sqrt{2} $}{$ 4 $}{$ 4\sqrt{2} $}{$ 2 $}
+\qs 我校高中生共有$ 2700 $人，其中高一年级$ 900 $人，高二年级$ 1200 $人，高三年级$ 600 $人，现采取分层抽样法抽取容量为$ 135 $的样本，则高一、高二、高三各年级抽取的人数分别为\tk.\\
+\onech{$ 45,75,15 $}{$ 45,45,45 $}{$ 30,90,15 $}{$ 45,60,30 $}
+\qs $ 200 $辆汽车经过某一雷达地区，时速频率分布直方图如\\%
+右图所示，则时速超过$ 70~km/h $的汽车数量为\tk.\\
+\fourch{$ 2~\text{辆}$}{$ 10~\text{辆}$}{$ 20~\text{辆}$}{$ 70~\text{辆}$}
+\vspace{-5cm}
+\begin{flushright}
+\begin{tikzpicture}[scale=0.8]
+\draw[->,>=latex] (0,-0.2)--(0,3.8) node[right] at(0,3.8) {$\dfrac{\text{频率}}{\text{组据}}$};
+\draw[->,>=latex] (-0.2,0)--(0.1,0)--(0.2,0.2)--(0.3,-0.2)--(0.5,0)--(6,0) node[below] at(6,0) {时速};
+\draw (1,0)--(1,1)--(1.8,1) (1.8,0)--(1.8,2)--(2.6,2) (2.6,0)--(2.6,3)--(3.4,3)--(3.4,0);
+\draw (3.4,2.3)--(4.2,2.3)--(4.2,0) (4.2,1.5)--(5,1.5)--(5,0);
+\draw[dashed] (0,1)--(1,1) (0,1.5)--(4.2,1.5) (0,2)--(1.8,2) (0,2.3)--(3.4,2.3) (0,3)--(2.6,3);
+\node[below] at (1,0) {\small $30$};
+\node[below] at (1.8,0) {\small $40$};
+\node[below] at (2.6,0) {\small $50$};
+\node[below] at (3.4,0) {\small $60$};
+\node[below] at (4.2,0) {\small $70$};
+\node[below] at (5,0) {\small $80$};
+\node[left] at (0,1) {\small $0.005$};
+\node[left] at (0,1.5) {\small $0.010$};
+\node[left] at (0,2) {\small $0.018$};
+\node[left] at (0,2.4) {\small $0.028$};
+\node[left] at (0,3) {\small $0.039$};
+
+\end{tikzpicture}
+\end{flushright}
+\qs 设$ A(3,3,1),B(1,0,5),C(0,1,0) $,则$ AB $的中点$ M $到点$ C $的距离$ \left| ~CM~ \right| $=\tk.\\
+\onech{$\dfrac{\sqrt{53}}{4}$}{$\dfrac{53}{2}$}{$\dfrac{\sqrt{53}}{2}$}{$\dfrac{\sqrt{13}}{2}$}
+\qs 圆$C_1:~x^2+y^2+2x+8y-8=0$与圆$C_2:~x^2+y^2-4x+4y-2=0$的位置关系是\tk.\\
+\onech{相交}{外切}{内切}{相离}
+\qs 如图，表示甲、乙两名运动员每场比赛得分情况的茎叶图，则甲和乙得分的中位数的和是\tk.\\
+\fourch{$56~\text{分}$}{$57~\text{分}$}{$58~\text{分}$}{$59~\text{分}$}
+\vspace{-4cm}
+\begin{flushright}
+\begin{tabular}{r|c|l}
+甲&    &乙 \\
+\hline
+4&0&8  \\
+4~~4&1&2~~5~~8  \\
+5~~4&2&3~~6~~5  \\
+9~~5~~6~~6~~2~~1&3&2~~3~~4  \\
+9~~5&4&1
+\end{tabular}
+\end{flushright}
+%填空题
+\tiankong
+\qs 把$~98~$化成五进制数为\ltk.
+\qs 用辗转相除法求出$153$和$119$的最大公约数是\ltk.
+\qs 以点$A(1,4),B(3,-2)$为直径的两个端点的圆的方程为\ltk.
+\qs 已知$x,y$满足约束条件%
+$\begin{cases}
+x-y+5\geq 0 \\
+x+y\geq 0  \\
+x\leq 3  \\
+\end{cases}$,
+则$z=4x-y$的最小值为\ltk.
+
+%解答题
+\jianda
+\qs 已知圆心在直线~$y=0$~上，且圆过两点~$A(1,4),B(3,2)$，求圆的方程.
+\vspace{8cm}
+\qs 对自行车运动员甲、乙两人在相同条件下进行了$6$次测试，测得他们的最大速度（$m/s$）的数据如下：
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+~~~~~甲~~~~&$~~~~27~~~~$&$~~~~38~~~~$&$~~~~30~~~~$&$~~~~37~~~~$&$~~~~35~~~~$&$~~~~31~~~~$  \\
+\hline
+乙&$33$&$29$&$38$&$34$&$28$&$36$  \\
+\hline
+\end{tabular}
+\end{center}
+\begin{parts}
+\part 画出茎叶图，求中位数；
+\part 分别求出甲乙两名自行车赛手最大速度（$m/s$）数据的平均数、方差，试判断选谁参加该项重大比赛更合适.
+\end{parts}
+\vspace{8cm}
+\qs 某工厂对产品的产量与成本的资料分析后有如下数据：
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+~~~~~产量$x$千件~~~~~&~~~~~2~~~~~&~~~~~3~~~~~&~~~~~5~~~~~&~~~~~6~~~~~  \\
+\hline
+成本$y$万元&7&8&9&12  \\
+\hline
+\end{tabular}
+\end{center}
+\begin{parts}
+\part  画出散点图；
+\part 求成本$y$与产量$x$之间的线性回归方程（结果保留两位小数）
+\end{parts}
+（{\kaishu 参考公式：}$\hat{b}=\dfrac{\sum\limits _{i=1}^{n} x_iy_i-n\overline{x}\overline{y}}{\sum\limits _{i=1}^{n} x_i ^2-n\overline{x}^2},\hat{a}=\overline{y}-\hat{b}\overline{x}$）
+\vspace{8cm}
+\qs 过原点~$O$~作圆~$x^2+y^2-8x=0$~的弦。
+\begin{parts}
+\part 求弦~$OA$~中点~$M$~的轨迹方程；
+\part 延长~$OA$~到~$N$~,使~$\abs{OA}=\abs{AN}$~,求~$N$~点的轨迹方程。
+\end{parts}
+\vspace{8cm}
+\qs 某中学对高三年级进行身高统计，测量随机抽取的~$40$~名学生的身高，其结果如下（单位：$cm$）\\
+{\zihao{-5}%
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+\hline
+分组&$\left[140,145\right)$&$\left[145,150\right)$&$\left[150,155\right)$&$\left[155,160\right)$&$\left[160,165\right)$&$\left[165,170\right)$%
+&$\left[170,175\right)$&$\left[175,180\right]$&合计 \\
+\hline
+人数&1&2&5&9&13&6&3&1&40 \\
+\hline
+\end{tabular}
+}
+\begin{parts}
+\part 列出频率分布表；
+\part 画出频率分布直方图；
+\part 根据频率直方图求众数、中位数。
+\end{parts}
+\end{questions}
+\end{document}
